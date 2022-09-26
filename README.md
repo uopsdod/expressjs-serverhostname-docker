@@ -14,38 +14,35 @@
 
 ```
 [Windows, MacOS, Linux][amd][beta]
-docker build --build-arg STAGE=beta -t uopsdod/k8s-hostname-buyer-amd64-beta --no-cache .
+docker build --build-arg STAGE=beta -t uopsdod/k8s-hostname-amd64-beta --no-cache .
 docker stop c001 && docker rm c001
-docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-buyer-amd64-beta
+docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-amd64-beta
 curl http://localhost:8080
 curl http://localhost:8080/free
 curl http://localhost:8080/paid
-docker push uopsdod/k8s-hostname-buyer-amd64-beta
-(result: https://hub.docker.com/repository/docker/uopsdod/k8s-hostname-buyer-amd64-v1)
+docker push uopsdod/k8s-hostname-amd64-beta
 ```
 
 ```
 [Windows, MacOS, Linux][amd][prod]
-docker build --build-arg STAGE=prod -t uopsdod/k8s-hostname-buyer-amd64-prod --no-cache .
+docker build --build-arg STAGE=prod -t uopsdod/k8s-hostname-amd64-prod --no-cache .
 docker stop c001 && docker rm c001
-docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-buyer-amd64-prod
+docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-amd64-prod
 curl http://localhost:8080
 curl http://localhost:8080/free
 curl http://localhost:8080/paid
-docker push uopsdod/k8s-hostname-buyer-amd64-prod
-(result: https://hub.docker.com/repository/docker/uopsdod/k8s-hostname-buyer-amd64-v2)
+docker push uopsdod/k8s-hostname-amd64-prod
 ```
 
 ```
 [MacOS M1/M2][arm][beta]
-docker build --build-arg STAGE=beta -t uopsdod/k8s-hostname-buyer-arm64-beta --no-cache .
+docker build --build-arg STAGE=beta -t uopsdod/k8s-hostname-arm64-beta --no-cache .
 docker stop c001 && docker rm c001
-docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-buyer-arm64-beta
+docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-arm64-beta
 curl http://localhost:8080
 curl http://localhost:8080/free
 curl http://localhost:8080/paid
-docker push uopsdod/k8s-hostname-buyer-arm64-beta
-(result: https://hub.docker.com/repository/docker/uopsdod/k8s-hostname-buyer-arm64-v1)
+docker push uopsdod/k8s-hostname-arm64-beta
 ```
 
 ```
