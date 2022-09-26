@@ -18,6 +18,12 @@ docker build --build-arg APP_VERSION=v1 -t uopsdod/k8s-hostname-buyer-amd64-v1 -
 docker stop c001 && docker rm c001
 docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-buyer-amd64-v1
 curl http://localhost:8080
+curl http://localhost:8080/music
+curl http://localhost:8080/music/free
+curl http://localhost:8080/music/paid
+curl http://localhost:8080/movie
+curl http://localhost:8080/movie/free
+curl http://localhost:8080/movie/paid
 docker push uopsdod/k8s-hostname-buyer-amd64-v1
 (result: https://hub.docker.com/repository/docker/uopsdod/k8s-hostname-buyer-amd64-v1)
 ```
@@ -28,6 +34,12 @@ docker build --build-arg APP_VERSION=v2 -t uopsdod/k8s-hostname-buyer-amd64-v2 -
 docker stop c001 && docker rm c001
 docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-buyer-amd64-v2
 curl http://localhost:8080
+curl http://localhost:8080/music
+curl http://localhost:8080/music/free
+curl http://localhost:8080/music/paid
+curl http://localhost:8080/movie
+curl http://localhost:8080/movie/free
+curl http://localhost:8080/movie/paid
 docker push uopsdod/k8s-hostname-buyer-amd64-v2
 (result: https://hub.docker.com/repository/docker/uopsdod/k8s-hostname-buyer-amd64-v2)
 ```
@@ -38,6 +50,12 @@ docker build --build-arg APP_VERSION=v1 -t uopsdod/k8s-hostname-buyer-arm64-v1 -
 docker stop c001 && docker rm c001
 docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-buyer-arm64-v1
 curl http://localhost:8080
+curl http://localhost:8080/music
+curl http://localhost:8080/music/free
+curl http://localhost:8080/music/paid
+curl http://localhost:8080/movie
+curl http://localhost:8080/movie/free
+curl http://localhost:8080/movie/paid
 docker push uopsdod/k8s-hostname-buyer-arm64-v1
 (result: https://hub.docker.com/repository/docker/uopsdod/k8s-hostname-buyer-arm64-v1)
 ```
@@ -48,6 +66,12 @@ docker build --build-arg APP_VERSION=v2 -t uopsdod/k8s-hostname-buyer-arm64-v2 -
 docker stop c001 && docker rm c001
 docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-buyer-arm64-v2
 curl http://localhost:8080
+curl http://localhost:8080/music
+curl http://localhost:8080/music/free
+curl http://localhost:8080/music/paid
+curl http://localhost:8080/movie
+curl http://localhost:8080/movie/free
+curl http://localhost:8080/movie/paid
 docker push uopsdod/k8s-hostname-buyer-arm64-v2
 (result: https://hub.docker.com/repository/docker/uopsdod/k8s-hostname-buyer-arm64-v2)
 ```
