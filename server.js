@@ -9,16 +9,17 @@ const HOST = '0.0.0.0';
 
 // App
 const app = express();
+const version = "replaced_this_with_app_version";
 app.get('/', (req, res) => {
-  res.send('hostname: ' + os.hostname());
+  res.send(`[${version}]hostname: ${os.hostname()}`);
 });
 
 app.get('/buyer', (req, res) => {
-  res.send('[buyer] hostname: ' + os.hostname());
+  res.send(`[${version}][buyer]hostname: ${os.hostname()}`);
 });
 
 app.get('/seller', (req, res) => {
-  res.send('[seller] hostname: ' + os.hostname());
+  res.send(`[${version}][seller]hostname: ${os.hostname()}`);
 });
 
 app.listen(PORT, HOST);

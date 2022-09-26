@@ -1,4 +1,5 @@
 FROM node:16
+ARG APP_VERSION
 # Create app directory
 WORKDIR /usr/src/app
 # Install app dependencies
@@ -9,6 +10,10 @@ RUN npm install
 
 # Bundle app source
 COPY . .
+
+# replace environment variable
+RUN sed -i "s|replaced_this_with_app_version|${APP_VERSION}|g" ./server.js
+
 
 EXPOSE 8080
 CMD [ "node", "server.js" ]
