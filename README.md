@@ -19,7 +19,7 @@ docker stop c001 && docker rm c001
 docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-buyer-amd64-v1
 curl http://localhost:8080
 docker push uopsdod/k8s-hostname-buyer-amd64-v1
-(result: XXXXXX)
+(result: https://hub.docker.com/repository/docker/uopsdod/k8s-hostname-buyer-amd64-v1)
 ```
 
 ```
@@ -29,6 +29,7 @@ docker stop c001 && docker rm c001
 docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-buyer-amd64-v2
 curl http://localhost:8080
 docker push uopsdod/k8s-hostname-buyer-amd64-v2
+(result: https://hub.docker.com/repository/docker/uopsdod/k8s-hostname-buyer-amd64-v2)
 ```
 
 ```
