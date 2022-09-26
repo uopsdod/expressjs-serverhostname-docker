@@ -20,7 +20,7 @@ const HOST = '0.0.0.0';
 const app = express();
 const stage = "replaced_this_with_stage";
 app.get('/', (req, res) => {
-  res.send(`[${stage}] served by: ${os.hostname()}`);
+  res.send(`[${stage}] served by: ${os.hostname()}\n`);
 });
 
 app.get('/paid', (req, res) => {
