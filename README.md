@@ -18,8 +18,6 @@ docker build --build-arg STAGE=beta -t uopsdod/k8s-hostname-amd64-beta --no-cach
 docker stop c001 && docker rm c001
 docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-amd64-beta
 curl http://localhost:8080
-curl http://localhost:8080/free
-curl http://localhost:8080/paid
 docker push uopsdod/k8s-hostname-amd64-beta
 ```
 
@@ -29,8 +27,6 @@ docker build --build-arg STAGE=prod -t uopsdod/k8s-hostname-amd64-prod --no-cach
 docker stop c001 && docker rm c001
 docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-amd64-prod
 curl http://localhost:8080
-curl http://localhost:8080/free
-curl http://localhost:8080/paid
 docker push uopsdod/k8s-hostname-amd64-prod
 ```
 
@@ -40,8 +36,6 @@ docker build --build-arg STAGE=beta -t uopsdod/k8s-hostname-arm64-beta --no-cach
 docker stop c001 && docker rm c001
 docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-arm64-beta
 curl http://localhost:8080
-curl http://localhost:8080/free
-curl http://localhost:8080/paid
 docker push uopsdod/k8s-hostname-arm64-beta
 ```
 
@@ -51,8 +45,6 @@ docker build --build-arg STAGE=prod -t uopsdod/k8s-hostname-buyer-arm64-prod --n
 docker stop c001 && docker rm c001
 docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-buyer-arm64-prod
 curl http://localhost:8080
-curl http://localhost:8080/free
-curl http://localhost:8080/paid
 docker push uopsdod/k8s-hostname-buyer-arm64-prod
 (result: https://hub.docker.com/repository/docker/uopsdod/k8s-hostname-buyer-arm64-v2)
 ```
