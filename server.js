@@ -13,10 +13,10 @@ const stage = "replaced_this_with_stage";
 
 // for ingress-hostname demo
 app.get('/', async (req, res) => {
-  var processms = req.query.procesms?req.query.procesms:0;
+  var process_ms = req.query.process_ms?req.query.process_ms:0;
   console.log("processing request ...");
-  await sleep(processms);
-  console.log(`processed request in ${processms} ms`);
+  await sleep(process_ms);
+  console.log(`processed request in ${process_ms} ms`);
   res.send(`[${stage}] served by: ${os.hostname()}\n`);
 });
 
