@@ -1,4 +1,5 @@
 'use strict';
+const loadTestingService = require("./loadtesting.js");
 
 const express = require('express');
 const os = require("os");
@@ -15,7 +16,7 @@ const stage = "replaced_this_with_stage";
 app.get('/', async (req, res) => {
   var process_ms = req.query.process_ms?req.query.process_ms:0;
   console.log("processing request ...");
-  await sleep(process_ms);
+  await loadTestingService.loadtesting(process_ms);
   console.log(`processed request in ${process_ms} ms`);
   res.send(`[${stage}] served by: ${os.hostname()}\n`);
 });
@@ -27,10 +28,3 @@ app.get(`/${stage}`, (req, res) => {
 
 app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
-
-// helper functions
-function sleep(ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-}
