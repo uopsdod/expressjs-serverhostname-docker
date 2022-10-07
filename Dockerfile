@@ -14,7 +14,6 @@ COPY . .
 # replace environment variable
 RUN sed -i "s|replaced_this_with_stage|${STAGE}|g" ./server.js
 
-
-EXPOSE 8080
+EXPOSE 80
 CMD [ "node", "server.js" ]
 
