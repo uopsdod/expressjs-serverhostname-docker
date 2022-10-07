@@ -16,8 +16,10 @@
 [Windows, MacOS, Linux][amd][beta]
 docker build --build-arg STAGE=beta -t uopsdod/k8s-hostname-amd64-beta --no-cache .
 docker stop c001 && docker rm c001
-docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-amd64-beta
-curl http://localhost:8080
+docker run -d -p 80:80 --name c001 uopsdod/k8s-hostname-amd64-beta
+curl http://localhost:80
+curl http://localhost:80?process_ms=3000
+./loadtesting.sh "localhost:80?process_ms=2000" 3
 docker push uopsdod/k8s-hostname-amd64-beta
 ```
 
@@ -25,28 +27,11 @@ docker push uopsdod/k8s-hostname-amd64-beta
 [Windows, MacOS, Linux][amd][prod]
 docker build --build-arg STAGE=prod -t uopsdod/k8s-hostname-amd64-prod --no-cache .
 docker stop c001 && docker rm c001
-docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-amd64-prod
-curl http://localhost:8080
+docker run -d -p 80:80 --name c001 uopsdod/k8s-hostname-amd64-prod
+curl http://localhost:80
+curl http://localhost:80?process_ms=3000
+./loadtesting.sh "localhost:80?process_ms=2000" 3
 docker push uopsdod/k8s-hostname-amd64-prod
-```
-
-```
-[MacOS M1/M2][arm][beta]
-docker build --build-arg STAGE=beta -t uopsdod/k8s-hostname-arm64-beta --no-cache .
-docker stop c001 && docker rm c001
-docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-arm64-beta
-curl http://localhost:8080
-docker push uopsdod/k8s-hostname-arm64-beta
-```
-
-```
-[MacOS M1/M2][arm][prod]
-docker build --build-arg STAGE=prod -t uopsdod/k8s-hostname-buyer-arm64-prod --no-cache .
-docker stop c001 && docker rm c001
-docker run -d -p 8080:80 --name c001 uopsdod/k8s-hostname-buyer-arm64-prod
-curl http://localhost:8080
-docker push uopsdod/k8s-hostname-buyer-arm64-prod
-(result: https://hub.docker.com/repository/docker/uopsdod/k8s-hostname-buyer-arm64-v2)
 ```
 
 ### reference (Nodejs + ExpressJS + Docker)
