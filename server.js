@@ -42,10 +42,13 @@ app.get(`/healthcheck_switchstatus`, (req, res) => {
   }else {
     isHealthy = true;
   }
-  res.send(`isHealthy value switched to ${isHealthy}.\n`);
+  res.send(`[${stage}] served by: ${os.hostname()}.\n[${stage}] isHealthy value switched to ${isHealthy}.\n`);
 });
 
 app.get(`/healthcheck_dependency`, (req, res) => {
+  if (isDependancyHealthy == false) {
+    throw new Error('BROKEN') // Express will catch this on its own
+  }
   res.send(`All OK\n`);
 });
 
@@ -55,7 +58,7 @@ app.get(`/healthcheck_dependency_switchstatus`, (req, res) => {
   }else {
     isDependancyHealthy = true;
   }
-  res.send(`isDependancyHealthy value switched to ${isDependancyHealthy}.\n`);
+  res.send(`[${stage}] served by: ${os.hostname()}.\n[${stage}] isDependancyHealthy value switched to ${isDependancyHealthy}.\n`);
 });
 
 
